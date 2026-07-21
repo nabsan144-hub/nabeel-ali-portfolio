@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nabeel Ali (CreativeNab) — Senior Graphic Designer. 58 premium projects across Logo Design, Advertising, Social Media, Image Manipulation, and Website Design.">
+    <title>Nabeel Ali • CreativeNab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .heading-font { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; }
+
+        .category-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+        .category-btn:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            background-color: #111111;
+            color: white;
+        }
+        .category-btn:hover .icon { color: white; }
+
+        .nav-link { transition: color 0.2s ease; }
+        .nav-link:hover { color: #111111; }
+    </style>
+</head>
+<body class="bg-white text-zinc-900">
+    <!-- NAV -->
+    <nav class="bg-white border-b border-zinc-100 sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <div class="w-9 h-9 bg-zinc-900 rounded-2xl flex items-center justify-center">
+                    <span class="text-white font-bold text-2xl tracking-tighter">NA</span>
+                </div>
+                <div>
+                    <div class="font-semibold text-2xl tracking-tighter">Nabeel Ali</div>
+                    <div class="text-[10px] text-zinc-500 -mt-1 tracking-[1.5px]">CREATIVE NAB</div>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-x-3">
+                <a href="portfolio.html" class="px-5 py-2.5 text-sm font-semibold rounded-3xl border border-zinc-200 hover:bg-zinc-50 transition-colors">
+                    Portfolio
+                </a>
+                <a href="https://www.behance.net/creativenab" target="_blank" rel="noopener noreferrer" 
+                   class="px-5 py-2.5 text-sm font-semibold rounded-3xl border border-zinc-200 hover:bg-zinc-50 transition-colors flex items-center gap-x-2">
+                    <i class="fab fa-behance"></i>
+                    <span>Behance</span>
+                </a>
+                <a href="#contact" class="px-6 py-2.5 text-sm font-semibold bg-zinc-900 text-white rounded-3xl hover:bg-black transition-colors">
+                    Let's Talk
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-xl" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t bg-white">
+            <div class="px-8 py-4 flex flex-col gap-y-3 text-sm">
+                <a href="portfolio.html" class="py-1">Portfolio</a>
+                <a href="https://www.behance.net/creativenab" target="_blank" class="py-1">Behance</a>
+                <a href="#contact" class="py-1">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="max-w-screen-2xl mx-auto px-8 pt-14 pb-12">
+        <div class="max-w-3xl">
+            <h1 class="heading-font text-7xl md:text-[78px] leading-none tracking-tighter font-bold">
+                Nabeel Ali.<br>
+                <span class="text-zinc-400">Senior Graphic Designer</span>
+            </h1>
+            <p class="mt-6 text-xl text-zinc-600 max-w-lg">
+                58 premium projects across 5 disciplines.
+            </p>
+        </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="border-y border-zinc-100 bg-zinc-50">
+        <div class="max-w-screen-2xl mx-auto px-8 py-4">
+            <div class="flex flex-wrap gap-x-10 gap-y-2 text-sm">
+                <div><span class="font-semibold">58</span> Projects</div>
+                <div><span class="font-semibold">5</span> Categories</div>
+                <div><span class="font-semibold">50+</span> Brands</div>
+                <div><span class="font-semibold">6</span> Years Experience</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CATEGORY BUTTONS -->
+    <div class="max-w-screen-2xl mx-auto px-8 py-14">
+        <div class="mb-8">
+            <div class="uppercase text-xs tracking-[3px] text-zinc-400 font-semibold mb-2">EXPLORE BY DISCIPLINE</div>
+            <h2 class="heading-font text-4xl font-bold tracking-tight">My Work</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+            
+            <a href="logos.html" class="category-btn group flex items-center gap-x-4 px-7 py-6 border border-zinc-200 hover:border-zinc-900 rounded-3xl bg-white">
+                <div class="icon w-10 h-10 flex items-center justify-center text-2xl text-zinc-700 group-hover:text-white">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <div class="flex-1">
+                    <div class="font-semibold text-xl">Logo Design</div>
+                    <div class="text-sm text-zinc-500">10 projects</div>
+                </div>
+                <i class="fas fa-arrow-right text-zinc-400 group-hover:text-white transition-colors"></i>
+            </a>
+
+            <a href="advertising.html" class="category-btn group flex items-center gap-x-4 px-7 py-6 border border-zinc-200 hover:border-zinc-900 rounded-3xl bg-white">
+                <div class="icon w-10 h-10 flex items-center justify-center text-2xl text-zinc-700 group-hover:text-white">
+                    <i class="fas fa-bullhorn"></i>
+                </div>
+                <div class="flex-1">
+                    <div class="font-semibold text-xl">Advertising &amp; Print</div>
+                    <div class="text-sm text-zinc-500">11 projects</div>
+                </div>
+                <i class="fas fa-arrow-right text-zinc-400 group-hover:text-white transition-colors"></i>
+            </a>
+
+            <a href="social.html" class="category-btn group flex items-center gap-x-4 px-7 py-6 border border-zinc-200 hover:border-zinc-900 rounded-3xl bg-white">
+                <div class="icon w-10 h-10 flex items-center justify-center text-2xl text-zinc-700 group-hover:text-white">
+                    <i class="fas fa-share-alt"></i>
+                </div>
+                <div class="flex-1">
+                    <div class="font-semibold text-xl">Social Media</div>
+                    <div class="text-sm text-zinc-500">10 projects</div>
+                </div>
+                <i class="fas fa-arrow-right text-zinc-400 group-hover:text-white transition-colors"></i>
+            </a>
+
+            <a href="manipulation.html" class="category-btn group flex items-center gap-x-4 px-7 py-6 border border-zinc-200 hover:border-zinc-900 rounded-3xl bg-white">
+                <div class="icon w-10 h-10 flex items-center justify-center text-2xl text-zinc-700 group-hover:text-white">
+                    <i class="fas fa-image"></i>
+                </div>
+                <div class="flex-1">
+                    <div class="font-semibold text-xl">Image Manipulation</div>
+                    <div class="text-sm text-zinc-500">12 projects</div>
+                </div>
+                <i class="fas fa-arrow-right text-zinc-400 group-hover:text-white transition-colors"></i>
+            </a>
+
+            <a href="websites.html" class="category-btn group flex items-center gap-x-4 px-7 py-6 border border-zinc-200 hover:border-zinc-900 rounded-3xl bg-white">
+                <div class="icon w-10 h-10 flex items-center justify-center text-2xl text-zinc-700 group-hover:text-white">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <div class="flex-1">
+                    <div class="font-semibold text-xl">Website Design</div>
+                    <div class="text-sm text-zinc-500">15 projects</div>
+                </div>
+                <i class="fas fa-arrow-right text-zinc-400 group-hover:text-white transition-colors"></i>
+            </a>
+        </div>
+
+        <p class="text-center text-xs text-zinc-400 mt-6">Click any button above to open the full category page</p>
+    </div>
+
+    <!-- ABOUT + CONTACT -->
+    <div class="max-w-screen-2xl mx-auto px-8 pb-16 border-t pt-10 grid md:grid-cols-2 gap-x-12 gap-y-10 text-sm">
+        <div>
+            <div class="font-semibold mb-2">About</div>
+            <p class="text-zinc-600">Senior Graphic Designer based in Karachi with 6+ years creating premium visual identities and campaigns for ambitious brands.</p>
+        </div>
+        <div>
+            <div class="font-semibold mb-2">Contact</div>
+            <div class="space-y-1">
+                <a href="mailto:nabeelali19@outlook.com" class="block hover:text-zinc-900">nabeelali19@outlook.com</a>
+                <a href="https://www.behance.net/creativenab" target="_blank" class="block hover:text-zinc-900">Behance</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="border-t text-xs text-zinc-400 px-8 py-6">
+        © 2026 Nabeel Ali • CreativeNab
+    </footer>
+
+    <script>
+        // Mobile menu
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const icon = mobileBtn.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                }
+            });
+        }
+
+        console.log('%c[Portfolio] Homepage loaded successfully', 'color:#666');
+    </script>
+</body>
+</html>
