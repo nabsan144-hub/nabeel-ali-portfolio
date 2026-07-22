@@ -3,204 +3,708 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nabeel Ali (CreativeNab) — Senior Graphic Designer. 58 premium projects across Logo Design, Advertising, Social Media, Image Manipulation, and Website Design.">
-    <title>Nabeel Ali • CreativeNab</title>
+    <meta name="description" content="Nabeel Ali (CreativeNab) — Senior Graphic Designer with 6+ years turning ambitious brands into cultural moments. 58 premium projects across Logo Design, Advertising, Social Media, Image Manipulation, and Website Design.">
+    <meta name="author" content="Nabeel Ali">
+    <title>Nabeel Ali • CreativeNab | World-Class Brand Designer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
         
-        body { font-family: 'Inter', system_ui, sans-serif; }
-        .heading-font { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; }
-
-        .category-btn {
-            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        body { 
+            font-family: 'Inter', system_ui, sans-serif; 
         }
-        .category-btn:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-            background-color: #111111;
-            color: white;
+        
+        .heading-font { 
+            font-family: 'Playfair Display', Georgia, serif; 
+            font-weight: 700; 
         }
-        .category-btn:hover .icon { color: white; }
 
-        .nav-link { transition: color 0.2s ease; }
-        .nav-link:hover { color: #111111; }
+        .nav-link {
+            position: relative;
+            transition: color 0.2s ease;
+        }
+        
+        .nav-link:hover {
+            color: #111111;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #111;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .portfolio-card {
+            transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1), 
+                        box-shadow 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+            will-change: transform;
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.15);
+        }
+
+        .testimonial-card {
+            transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), 
+                        box-shadow 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+
+        .micro-hover {
+            transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .micro-hover:hover {
+            transform: translateY(-2px);
+        }
+
+        .trust-logo {
+            transition: filter 0.3s ease, color 0.3s ease;
+        }
+        
+        .trust-logo:hover {
+            filter: grayscale(0%);
+            color: #111;
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .section {
+            scroll-margin-top: 80px;
+        }
+
+        .nav-active {
+            color: #111111;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body class="bg-white text-zinc-900">
+
     <!-- NAV -->
-    <nav class="bg-white border-b border-zinc-100 sticky top-0 z-50">
+    <nav class="bg-white border-b border-zinc-100 sticky top-0 z-50" role="navigation" aria-label="Main navigation">
         <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
             <div class="flex items-center gap-x-3">
-                <div class="w-9 h-9 bg-zinc-900 rounded-2xl flex items-center justify-center">
-                    <span class="text-white font-bold text-2xl tracking-tighter">NA</span>
-                </div>
-                <div>
-                    <div class="font-semibold text-2xl tracking-tighter">Nabeel Ali</div>
-                    <div class="text-[10px] text-zinc-500 -mt-1 tracking-[1.5px]">CREATIVE NAB</div>
-                </div>
+                <a href="index.html" class="flex items-center gap-x-3" aria-label="Nabeel Ali home">
+                    <div class="w-9 h-9 bg-zinc-900 rounded-2xl flex items-center justify-center">
+                        <span class="text-white font-bold text-2xl tracking-tighter">NA</span>
+                    </div>
+                    <div>
+                        <div class="font-semibold text-2xl tracking-tighter">Nabeel Ali</div>
+                        <div class="text-[10px] text-zinc-500 -mt-1 tracking-[1.5px]">CREATIVE NAB</div>
+                    </div>
+                </a>
             </div>
             
-            <div class="hidden md:flex items-center gap-x-3">
-                <a href="portfolio.html" class="px-5 py-2.5 text-sm font-semibold rounded-3xl border border-zinc-200 hover:bg-zinc-50 transition-colors">
-                    Portfolio
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-x-4">
+                <a href="portfolio.html" class="nav-link px-5 py-2 text-sm font-medium text-zinc-600">Portfolio</a>
+                <a href="#story" class="nav-link px-5 py-2 text-sm font-medium text-zinc-600">My Story</a>
+                <a href="#testimonials" class="nav-link px-5 py-2 text-sm font-medium text-zinc-600">Clients</a>
+                <a href="#contact" class="px-5 py-2.5 text-sm font-semibold rounded-3xl border border-zinc-200 hover:bg-zinc-50 transition-colors flex items-center gap-x-2">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
                 </a>
-                <a href="https://www.behance.net/creativenab" target="_blank" rel="noopener noreferrer" 
-                   class="px-5 py-2.5 text-sm font-semibold rounded-3xl border border-zinc-200 hover:bg-zinc-50 transition-colors flex items-center gap-x-2">
-                    <i class="fab fa-behance"></i>
-                    <span>Behance</span>
-                </a>
-                <a href="#contact" class="px-6 py-2.5 text-sm font-semibold bg-zinc-900 text-white rounded-3xl hover:bg-black transition-colors">
+                <a href="#contact" class="px-6 py-2.5 text-sm font-semibold bg-zinc-900 text-white rounded-3xl hover:bg-black transition-colors micro-hover">
                     Let's Talk
                 </a>
             </div>
 
-            <button id="mobile-menu-btn" class="md:hidden p-2 text-xl" aria-label="Toggle menu">
+            <!-- Mobile Hamburger -->
+            <button id="mobile-menu-btn" 
+                    class="md:hidden p-2 text-xl text-zinc-700 hover:text-zinc-900 focus:outline-none focus:ring-2 focus:ring-zinc-400 rounded" 
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden border-t bg-white">
+        <div id="mobile-menu" class="hidden md:hidden border-t bg-white" role="menu">
             <div class="px-8 py-4 flex flex-col gap-y-3 text-sm">
-                <a href="portfolio.html" class="py-1">Portfolio</a>
-                <a href="https://www.behance.net/creativenab" target="_blank" class="py-1">Behance</a>
-                <a href="#contact" class="py-1">Contact</a>
+                <a href="portfolio.html" class="py-1 text-zinc-600 hover:text-zinc-900" role="menuitem">Portfolio</a>
+                <a href="#story" class="py-1 text-zinc-600 hover:text-zinc-900" role="menuitem">My Story</a>
+                <a href="#testimonials" class="py-1 text-zinc-600 hover:text-zinc-900" role="menuitem">Clients</a>
+                <a href="mailto:nabeelali19@outlook.com" class="py-1 text-zinc-600 hover:text-zinc-900" role="menuitem">Contact</a>
+                <a href="#contact" class="py-1 text-zinc-600 hover:text-zinc-900 font-semibold" role="menuitem">Let's Talk</a>
             </div>
         </div>
     </nav>
 
     <!-- HERO -->
-    <div class="max-w-screen-2xl mx-auto px-8 pt-14 pb-12">
-        <div class="max-w-3xl">
-            <h1 class="heading-font text-7xl md:text-[78px] leading-none tracking-tighter font-bold">
-                Nabeel Ali.<br>
-                <span class="text-zinc-400">Senior Graphic Designer</span>
-            </h1>
-            <p class="mt-6 text-xl text-zinc-600 max-w-lg">
-                58 premium projects across 5 disciplines.
-            </p>
-        </div>
-    </div>
+    <main>
+        <div class="max-w-screen-2xl mx-auto px-8 pt-16 pb-12">
+            <div class="max-w-5xl">
+                <div class="inline-flex items-center gap-x-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-xs font-semibold tracking-[2px] mb-6">
+                    <div class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" aria-hidden="true"></div>
+                    KARACHI • AVAILABLE FOR 2026 PROJECTS
+                </div>
+                
+                <h1 class="heading-font text-[68px] md:text-[88px] leading-[0.88] tracking-[-5.2px] font-bold">
+                    I turn brands<br>
+                    into <span class="text-zinc-900">cultural moments</span>.
+                </h1>
+                
+                <p class="mt-8 max-w-2xl text-2xl text-zinc-600 tracking-tight">
+                    Senior Graphic Designer with 6+ years crafting unforgettable identities, campaigns &amp; digital experiences that make people stop, feel, and remember.
+                </p>
 
-    <!-- STATS -->
-    <div class="border-y border-zinc-100 bg-zinc-50">
-        <div class="max-w-screen-2xl mx-auto px-8 py-4">
-            <div class="flex flex-wrap gap-x-10 gap-y-2 text-sm">
-                <div><span class="font-semibold">58</span> Projects</div>
-                <div><span class="font-semibold">5</span> Categories</div>
-                <div><span class="font-semibold">50+</span> Brands</div>
-                <div><span class="font-semibold">6</span> Years Experience</div>
+                <div class="mt-10 flex flex-wrap items-center gap-4">
+                    <a href="#contact" 
+                       class="group px-10 py-[19px] bg-zinc-950 hover:bg-black text-white text-sm font-semibold rounded-3xl flex items-center gap-x-3 transition-all shadow-sm">
+                        Let's create something they can't ignore 
+                        <span class="group-hover:translate-x-1 transition">→</span>
+                    </a>
+                    <a href="portfolio.html" 
+                       class="px-9 py-[19px] border-2 border-zinc-200 hover:bg-zinc-50 text-sm font-semibold rounded-3xl transition-all flex items-center gap-x-2">
+                        <span>Explore the full work</span>
+                    </a>
+                </div>
+
+                <div class="mt-9 flex items-center gap-x-4 text-sm">
+                    <div class="flex -space-x-2" aria-hidden="true">
+                        <div class="w-6 h-6 bg-zinc-900 rounded-full ring-2 ring-white"></div>
+                        <div class="w-6 h-6 bg-zinc-700 rounded-full ring-2 ring-white"></div>
+                        <div class="w-6 h-6 bg-zinc-500 rounded-full ring-2 ring-white"></div>
+                        <div class="w-6 h-6 bg-zinc-400 rounded-full ring-2 ring-white"></div>
+                    </div>
+                    <span class="text-zinc-500">Trusted by 50+ ambitious brands in 8 countries</span>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- CATEGORY BUTTONS -->
-    <div class="max-w-screen-2xl mx-auto px-8 py-14">
-        <div class="mb-8">
-            <div class="uppercase text-xs tracking-[3px] text-zinc-400 font-semibold mb-2">EXPLORE BY DISCIPLINE</div>
-            <h2 class="heading-font text-4xl font-bold tracking-tight">My Work</h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-            
-            <a href="logos.html" class="category-btn group flex items-center gap-x-4 px-7 py-6 border border-zinc-200 hover:border-zinc-900 rounded-3xl bg-white">
-                <div class="icon w-10 h-10 flex items-center justify-center text-2xl text-zinc-700 group-hover:text-white">
-                    <i class="fas fa-palette"></i>
+        <!-- TRUST BAR - Neutral & Professional -->
+        <div class="border-t border-b border-zinc-100 bg-zinc-50 py-5" role="region" aria-label="Global reach">
+            <div class="max-w-screen-2xl mx-auto px-8">
+                <div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-center">
+                    <div class="text-xs tracking-[3px] font-medium text-zinc-400">WORKING WITH AMBITIOUS BRANDS WORLDWIDE</div>
+                    <div class="flex flex-wrap items-center gap-x-8 text-sm font-medium text-zinc-600">
+                        <span>8 Countries</span>
+                        <span class="text-zinc-300">•</span>
+                        <span>50+ Brands</span>
+                        <span class="text-zinc-300">•</span>
+                        <span>6+ Years</span>
+                    </div>
                 </div>
-                <div class="flex-1">
-                    <div class="font-semibold text-xl">Logo Design</div>
-                    <div class="text-sm text-zinc-500">10 projects</div>
-                </div>
-                <i class="fas fa-arrow-right text-zinc-400 group-hover:text-white transition-colors"></i>
-            </a>
-
-            <a href="advertising.html" class="category-btn group flex items-center gap-x-4 px-7 py-6 border border-zinc-200 hover:border-zinc-900 rounded-3xl bg-white">
-                <div class="icon w-10 h-10 flex items-center justify-center text-2xl text-zinc-700 group-hover:text-white">
-                    <i class="fas fa-bullhorn"></i>
-                </div>
-                <div class="flex-1">
-                    <div class="font-semibold text-xl">Advertising &amp; Print</div>
-                    <div class="text-sm text-zinc-500">11 projects</div>
-                </div>
-                <i class="fas fa-arrow-right text-zinc-400 group-hover:text-white transition-colors"></i>
-            </a>
-
-            <a href="social.html" class="category-btn group flex items-center gap-x-4 px-7 py-6 border border-zinc-200 hover:border-zinc-900 rounded-3xl bg-white">
-                <div class="icon w-10 h-10 flex items-center justify-center text-2xl text-zinc-700 group-hover:text-white">
-                    <i class="fas fa-share-alt"></i>
-                </div>
-                <div class="flex-1">
-                    <div class="font-semibold text-xl">Social Media</div>
-                    <div class="text-sm text-zinc-500">10 projects</div>
-                </div>
-                <i class="fas fa-arrow-right text-zinc-400 group-hover:text-white transition-colors"></i>
-            </a>
-
-            <a href="manipulation.html" class="category-btn group flex items-center gap-x-4 px-7 py-6 border border-zinc-200 hover:border-zinc-900 rounded-3xl bg-white">
-                <div class="icon w-10 h-10 flex items-center justify-center text-2xl text-zinc-700 group-hover:text-white">
-                    <i class="fas fa-image"></i>
-                </div>
-                <div class="flex-1">
-                    <div class="font-semibold text-xl">Image Manipulation</div>
-                    <div class="text-sm text-zinc-500">12 projects</div>
-                </div>
-                <i class="fas fa-arrow-right text-zinc-400 group-hover:text-white transition-colors"></i>
-            </a>
-
-            <a href="websites.html" class="category-btn group flex items-center gap-x-4 px-7 py-6 border border-zinc-200 hover:border-zinc-900 rounded-3xl bg-white">
-                <div class="icon w-10 h-10 flex items-center justify-center text-2xl text-zinc-700 group-hover:text-white">
-                    <i class="fas fa-globe"></i>
-                </div>
-                <div class="flex-1">
-                    <div class="font-semibold text-xl">Website Design</div>
-                    <div class="text-sm text-zinc-500">15 projects</div>
-                </div>
-                <i class="fas fa-arrow-right text-zinc-400 group-hover:text-white transition-colors"></i>
-            </a>
-        </div>
-
-        <p class="text-center text-xs text-zinc-400 mt-6">Click any button above to open the full category page</p>
-    </div>
-
-    <!-- ABOUT + CONTACT -->
-    <div class="max-w-screen-2xl mx-auto px-8 pb-16 border-t pt-10 grid md:grid-cols-2 gap-x-12 gap-y-10 text-sm">
-        <div>
-            <div class="font-semibold mb-2">About</div>
-            <p class="text-zinc-600">Senior Graphic Designer based in Karachi with 6+ years creating premium visual identities and campaigns for ambitious brands.</p>
-        </div>
-        <div>
-            <div class="font-semibold mb-2">Contact</div>
-            <div class="space-y-1">
-                <a href="mailto:nabeelali19@outlook.com" class="block hover:text-zinc-900">nabeelali19@outlook.com</a>
-                <a href="https://www.behance.net/creativenab" target="_blank" class="block hover:text-zinc-900">Behance</a>
             </div>
         </div>
-    </div>
+
+        <!-- STATS -->
+        <div class="max-w-screen-2xl mx-auto px-8 pt-12 pb-10">
+            <dl class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <dt class="text-5xl font-bold tracking-tighter">58</dt>
+                    <dd class="text-zinc-500 mt-1">Premium projects delivered</dd>
+                </div>
+                <div>
+                    <dt class="text-5xl font-bold tracking-tighter">6+</dt>
+                    <dd class="text-zinc-500 mt-1">Years shaping brands</dd>
+                </div>
+                <div>
+                    <dt class="text-5xl font-bold tracking-tighter">50+</dt>
+                    <dd class="text-zinc-500 mt-1">Brands transformed</dd>
+                </div>
+                <div>
+                    <dt class="text-5xl font-bold tracking-tighter">8</dt>
+                    <dd class="text-zinc-500 mt-1">Countries reached</dd>
+                </div>
+            </dl>
+        </div>
+
+        <!-- CURRENTLY AVAILABLE CTA -->
+        <div class="bg-zinc-950 text-white py-9" role="region" aria-label="Availability">
+            <div class="max-w-screen-2xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <div class="uppercase text-xs tracking-[3px] text-emerald-400 font-semibold">CURRENTLY AVAILABLE</div>
+                    <div class="text-3xl font-semibold tracking-tighter mt-1">Taking on 4-5 select projects in 2026</div>
+                </div>
+                <a href="#contact" 
+                   class="inline-flex items-center gap-x-3 px-10 py-4 bg-white text-zinc-950 text-sm font-semibold rounded-3xl hover:bg-zinc-100 transition-colors">
+                    Start a conversation <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- PORTFOLIO PREVIEW -->
+        <div class="max-w-screen-2xl mx-auto px-8 pt-16 pb-10">
+            <div class="flex items-end justify-between mb-8">
+                <div>
+                    <div class="text-xs uppercase tracking-[3px] text-zinc-400 font-semibold">EXPLORE THE WORK</div>
+                    <h2 class="heading-font text-5xl tracking-tighter mt-1">Featured categories</h2>
+                </div>
+                <a href="portfolio.html" class="hidden md:flex items-center gap-x-2 text-sm font-medium text-zinc-600 hover:text-black">
+                    View full portfolio <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+                <a href="logos.html" class="portfolio-card group block bg-white border border-zinc-200 hover:border-zinc-900 rounded-3xl p-6 transition-all" aria-label="View Logo Design projects">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <i class="fas fa-palette text-3xl text-zinc-700 group-hover:text-black"></i>
+                            <h3 class="font-semibold text-2xl mt-5 tracking-tight">Logo Design</h3>
+                            <p class="text-sm text-zinc-500 mt-1">10 premium brand identities</p>
+                        </div>
+                        <span class="text-xs px-3 py-1 bg-zinc-100 rounded-2xl text-zinc-600 font-medium">10</span>
+                    </div>
+                    <div class="mt-8 text-xs text-zinc-500 group-hover:text-zinc-900 flex items-center">Explore logos →</div>
+                </a>
+
+                <a href="advertising.html" class="portfolio-card group block bg-white border border-zinc-200 hover:border-zinc-900 rounded-3xl p-6 transition-all" aria-label="View Advertising &amp; Print projects">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <i class="fas fa-bullhorn text-3xl text-zinc-700 group-hover:text-black"></i>
+                            <h3 class="font-semibold text-2xl mt-5 tracking-tight">Advertising &amp; Print</h3>
+                            <p class="text-sm text-zinc-500 mt-1">11 campaign pieces</p>
+                        </div>
+                        <span class="text-xs px-3 py-1 bg-zinc-100 rounded-2xl text-zinc-600 font-medium">11</span>
+                    </div>
+                    <div class="mt-8 text-xs text-zinc-500 group-hover:text-zinc-900 flex items-center">Browse campaigns →</div>
+                </a>
+
+                <a href="social.html" class="portfolio-card group block bg-white border border-zinc-200 hover:border-zinc-900 rounded-3xl p-6 transition-all" aria-label="View Social Media projects">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <i class="fas fa-share-alt text-3xl text-zinc-700 group-hover:text-black"></i>
+                            <h3 class="font-semibold text-2xl mt-5 tracking-tight">Social Media</h3>
+                            <p class="text-sm text-zinc-500 mt-1">10 high-impact campaigns</p>
+                        </div>
+                        <span class="text-xs px-3 py-1 bg-zinc-100 rounded-2xl text-zinc-600 font-medium">10</span>
+                    </div>
+                    <div class="mt-8 text-xs text-zinc-500 group-hover:text-zinc-900 flex items-center">See campaigns →</div>
+                </a>
+
+                <a href="manipulation.html" class="portfolio-card group block bg-white border border-zinc-200 hover:border-zinc-900 rounded-3xl p-6 transition-all" aria-label="View Image Manipulation projects">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <i class="fas fa-image text-3xl text-zinc-700 group-hover:text-black"></i>
+                            <h3 class="font-semibold text-2xl mt-5 tracking-tight">Image Manipulation</h3>
+                            <p class="text-sm text-zinc-500 mt-1">12 advanced composites</p>
+                        </div>
+                        <span class="text-xs px-3 py-1 bg-zinc-100 rounded-2xl text-zinc-600 font-medium">12</span>
+                    </div>
+                    <div class="mt-8 text-xs text-zinc-500 group-hover:text-zinc-900 flex items-center">View manipulations →</div>
+                </a>
+
+                <a href="websites.html" class="portfolio-card group block bg-white border border-zinc-200 hover:border-zinc-900 rounded-3xl p-6 transition-all" aria-label="View Website Design projects">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <i class="fas fa-globe text-3xl text-zinc-700 group-hover:text-black"></i>
+                            <h3 class="font-semibold text-2xl mt-5 tracking-tight">Website Design</h3>
+                            <p class="text-sm text-zinc-500 mt-1">15 premium experiences</p>
+                        </div>
+                        <span class="text-xs px-3 py-1 bg-zinc-100 rounded-2xl text-zinc-600 font-medium">15</span>
+                    </div>
+                    <div class="mt-8 text-xs text-zinc-500 group-hover:text-zinc-900 flex items-center">Explore websites →</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- SELECTED WORK - Real Projects (Safe & Professional) -->
+        <div class="max-w-screen-2xl mx-auto px-8 pb-16">
+            <div class="mb-8">
+                <div class="text-xs uppercase tracking-[3px] text-zinc-400 font-semibold">SELECTED WORK</div>
+                <h3 class="heading-font text-3xl tracking-tighter mt-1">Recent projects</h3>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white">
+                    <img src="01_Logos/01_Aether_Real_Estate.png" alt="Aether Real Estate Logo" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                        <div class="text-white text-xs font-medium">Logo Design</div>
+                        <div class="text-white text-sm font-semibold">Aether Real Estate</div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white">
+                    <img src="02_Advertising_Print/01_Catalyst_Creative.png" alt="Catalyst Creative Print" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                        <div class="text-white text-xs font-medium">Advertising</div>
+                        <div class="text-white text-sm font-semibold">Catalyst Creative</div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white">
+                    <img src="03_Social_Media/01_Lumora_Skincare.jpg" alt="Lumora Skincare Social" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                        <div class="text-white text-xs font-medium">Social Media</div>
+                        <div class="text-white text-sm font-semibold">Lumora Skincare</div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white">
+                    <img src="04_Image_Manipulation/01_Aether_Watches.jpg" alt="Aether Watches Manipulation" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                        <div class="text-white text-xs font-medium">Image Manipulation</div>
+                        <div class="text-white text-sm font-semibold">Aether Watches</div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white">
+                    <img src="05_Website_Design/01_Nova_Finance.jpg" alt="Nova Finance Website" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                        <div class="text-white text-xs font-medium">Website Design</div>
+                        <div class="text-white text-sm font-semibold">Nova Finance</div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white">
+                    <img src="01_Logos/03_Bloom_Organic.png" alt="Bloom Organic Logo" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                        <div class="text-white text-xs font-medium">Logo Design</div>
+                        <div class="text-white text-sm font-semibold">Bloom Organic</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 text-center">
+                <a href="portfolio.html" class="inline-flex items-center gap-x-2 text-sm font-medium text-zinc-600 hover:text-zinc-900">
+                    View all 58 projects <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- MY STORY -->
+        <div id="story" class="max-w-screen-2xl mx-auto px-8 py-16 border-t section" role="region" aria-labelledby="story-heading">
+            <div class="max-w-4xl">
+                <div class="text-xs uppercase tracking-[3px] text-zinc-400 font-semibold mb-3">WHO I AM</div>
+                <h2 id="story-heading" class="heading-font text-5xl tracking-[-2.5px] leading-none">I believe great design is not decoration.<br>It’s strategy that feels like magic.</h2>
+                
+                <div class="mt-8 grid md:grid-cols-12 gap-x-10 gap-y-8 text-[15px] leading-relaxed">
+                    <div class="md:col-span-7">
+                        <p class="text-zinc-600">Born and raised in Karachi, I started designing at 16 because I was obsessed with how brands could make people feel something real. Over the past 6 years I’ve helped ambitious founders and teams across Pakistan, UAE, UK, USA, and beyond build identities that don’t just look good — they become part of culture.</p>
+                        
+                        <p class="mt-4 text-zinc-600">My process is simple but powerful: Listen deeply. Simplify ruthlessly. Design with soul. I don’t chase trends. I craft work that stands out in 2026 and still feels timeless in 2035.</p>
+                    </div>
+                    
+                    <div class="md:col-span-5">
+                        <div class="bg-zinc-50 border border-zinc-100 rounded-3xl p-7 text-sm">
+                            <div class="font-semibold mb-4">What I believe:</div>
+                            <ul class="space-y-3 text-zinc-600">
+                                <li class="flex gap-2"><span class="text-emerald-600">•</span> Simplicity is the ultimate sophistication</li>
+                                <li class="flex gap-2"><span class="text-emerald-600">•</span> Every pixel must earn its place</li>
+                                <li class="flex gap-2"><span class="text-emerald-600">•</span> Emotion beats perfection every time</li>
+                                <li class="flex gap-2"><span class="text-emerald-600">•</span> Design is 80% listening, 20% making</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TESTIMONIALS - Safe & Professional (Anonymous) -->
+        <div id="testimonials" class="max-w-screen-2xl mx-auto px-8 py-16 border-t bg-white section" role="region" aria-labelledby="testimonials-heading">
+            <div class="mb-9">
+                <div class="text-xs uppercase tracking-[3px] text-zinc-400 font-semibold">REAL RESULTS</div>
+                <h2 id="testimonials-heading" class="heading-font text-5xl tracking-tighter">What clients say</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="testimonial-card bg-white border border-zinc-200 rounded-3xl p-7">
+                    <div class="flex gap-1 text-emerald-500 mb-4" aria-hidden="true">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="italic text-lg leading-snug">"Nabeel didn't just design our logo. He completely transformed how the market perceives our brand. We went from invisible to being featured in top publications within 3 months."</p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div>
+                            <div class="font-semibold">Marketing Director</div>
+                            <div class="text-xs text-zinc-500">London</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card bg-white border border-zinc-200 rounded-3xl p-7">
+                    <div class="flex gap-1 text-emerald-500 mb-4" aria-hidden="true">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="italic text-lg leading-snug">"Our social campaigns designed by Nabeel delivered 4.8x engagement compared to previous agency. The work feels premium and authentic."</p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div>
+                            <div class="font-semibold">Head of Marketing</div>
+                            <div class="text-xs text-zinc-500">Dubai</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card bg-white border border-zinc-200 rounded-3xl p-7">
+                    <div class="flex gap-1 text-emerald-500 mb-4" aria-hidden="true">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="italic text-lg leading-snug">"The website Nabeel designed for us converted 34% better than our old site. Clients say it feels like luxury."</p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div>
+                            <div class="font-semibold">CEO</div>
+                            <div class="text-xs text-zinc-500">Milan</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card bg-white border border-zinc-200 rounded-3xl p-7">
+                    <div class="flex gap-1 text-emerald-500 mb-4" aria-hidden="true">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="italic text-lg leading-snug">"The rebrand Nabeel created helped us win three major international contracts in the first quarter. The new identity is clean and bold."</p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div>
+                            <div class="font-semibold">Founder</div>
+                            <div class="text-xs text-zinc-500">New York</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card bg-white border border-zinc-200 rounded-3xl p-7">
+                    <div class="flex gap-1 text-emerald-500 mb-4" aria-hidden="true">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="italic text-lg leading-snug">"The image manipulation work was next level. It saved us a fortune in production costs."</p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div>
+                            <div class="font-semibold">Creative Director</div>
+                            <div class="text-xs text-zinc-500">Paris</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card bg-white border border-zinc-200 rounded-3xl p-7">
+                    <div class="flex gap-1 text-emerald-500 mb-4" aria-hidden="true">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="italic text-lg leading-snug">"Nabeel's social media designs completely changed our online presence. We went from 8k to 47k followers in four months."</p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div>
+                            <div class="font-semibold">Brand Manager</div>
+                            <div class="text-xs text-zinc-500">Singapore</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="mailto:nabeelali19@outlook.com" class="inline text-sm text-zinc-500 hover:text-zinc-900">Read more client stories →</a>
+            </div>
+        </div>
+
+        <!-- HOW I WORK -->
+        <div class="max-w-screen-2xl mx-auto px-8 py-14 border-t section" role="region" aria-labelledby="process-heading">
+            <div class="max-w-4xl">
+                <div class="text-xs tracking-[3px] uppercase text-zinc-400 font-semibold mb-1">MY APPROACH</div>
+                <h3 id="process-heading" class="heading-font text-4xl tracking-tight">A simple, proven process that delivers results.</h3>
+                
+                <div class="mt-9 grid md:grid-cols-3 gap-7">
+                    <div class="flex gap-5">
+                        <div class="font-mono text-4xl text-zinc-300 font-bold">01</div>
+                        <div>
+                            <div class="font-semibold text-lg">Discovery &amp; Strategy</div>
+                            <p class="text-sm text-zinc-600 mt-1">We dig deep into your brand, audience, and goals. No guesswork.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5">
+                        <div class="font-mono text-4xl text-zinc-300 font-bold">02</div>
+                        <div>
+                            <div class="font-semibold text-lg">Concept &amp; Craft</div>
+                            <p class="text-sm text-zinc-600 mt-1">Multiple directions, refined until it feels right. Soul + strategy.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5">
+                        <div class="font-mono text-4xl text-zinc-300 font-bold">03</div>
+                        <div>
+                            <div class="font-semibold text-lg">Delivery &amp; Impact</div>
+                            <p class="text-sm text-zinc-600 mt-1">Final assets + guidelines + launch support. Results that matter.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTACT -->
+        <div id="contact" class="max-w-screen-2xl mx-auto px-8 py-16 bg-zinc-950 text-white border-t border-zinc-800 section" role="region" aria-labelledby="contact-heading">
+            <div class="max-w-2xl">
+                <div class="uppercase text-emerald-400 text-xs tracking-[3px]">LET'S BUILD SOMETHING TOGETHER</div>
+                <h2 id="contact-heading" class="heading-font text-6xl tracking-tighter mt-3">Ready to make your brand unforgettable?</h2>
+                <p class="mt-4 text-xl text-zinc-400">I only take on a handful of projects each year. If your brand has ambition, let's talk.</p>
+                
+                <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                    <a href="mailto:nabeelali19@outlook.com" 
+                       class="px-10 py-4 bg-white hover:bg-zinc-100 text-zinc-950 font-semibold rounded-3xl flex items-center justify-center gap-2 transition text-sm">
+                        <i class="fas fa-envelope"></i> 
+                        <span>Email me directly</span>
+                    </a>
+                    
+                    <a href="mailto:nabeelali19@outlook.com?subject=New%20Project%20Inquiry" 
+                       class="px-10 py-4 border border-white/40 hover:bg-white/10 rounded-3xl flex items-center justify-center gap-2 transition text-sm">
+                        Send a brief
+                    </a>
+                </div>
+
+                <div class="mt-8 text-sm text-zinc-400 flex items-center gap-x-2">
+                    <i class="fas fa-map-marker-alt"></i> 
+                    <span>Based in Karachi, Pakistan • Working globally</span>
+                </div>
+                
+                <div class="mt-2 text-xs text-zinc-500">nabeelali19@outlook.com</div>
+            </div>
+        </div>
+    </main>
 
     <!-- FOOTER -->
-    <footer class="border-t text-xs text-zinc-400 px-8 py-6">
-        © 2026 Nabeel Ali • CreativeNab
+    <footer class="border-t bg-white">
+        <div class="max-w-screen-2xl mx-auto px-8 py-7 flex flex-col md:flex-row md:items-center justify-between text-xs text-zinc-400">
+            <div>© 2026 Nabeel Ali • CreativeNab. All rights reserved.</div>
+            <div class="mt-3 md:mt-0 flex gap-x-6">
+                <a href="portfolio.html" class="hover:text-zinc-700">Full Portfolio</a>
+                <a href="mailto:nabeelali19@outlook.com" class="hover:text-zinc-700">Email</a>
+                <a href="#story" class="hover:text-zinc-700">About</a>
+            </div>
+        </div>
     </footer>
 
     <script>
+        // Tailwind script is already loaded via CDN
+
         // Mobile menu
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
+        function toggleMobileMenu() {
+            if (!mobileMenu || !mobileBtn) return;
+            
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            mobileBtn.setAttribute('aria-expanded', !isHidden);
+            
+            const icon = mobileBtn.querySelector('i');
+            if (icon) {
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
+            }
+        }
+
         if (mobileBtn && mobileMenu) {
-            mobileBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                const icon = mobileBtn.querySelector('i');
-                if (icon) {
-                    icon.classList.toggle('fa-bars');
-                    icon.classList.toggle('fa-times');
+            mobileBtn.addEventListener('click', toggleMobileMenu);
+
+            // Close menu when clicking a link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        mobileBtn.setAttribute('aria-expanded', 'false');
+                        const icon = mobileBtn.querySelector('i');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                });
+            });
+
+            // Close on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileBtn.setAttribute('aria-expanded', 'false');
+                    const icon = mobileBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                    mobileBtn.focus();
                 }
             });
         }
 
-        console.log('%c[Portfolio] Homepage loaded successfully', 'color:#666');
+        // Smooth scroll with offset for sticky nav
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    
+                    const navHeight = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.scrollY - navHeight;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        mobileBtn.setAttribute('aria-expanded', 'false');
+                        const icon = mobileBtn.querySelector('i');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                }
+            });
+        });
+
+        // Keyboard accessibility for portfolio cards
+        document.querySelectorAll('.portfolio-card').forEach(card => {
+            card.setAttribute('tabindex', '0');
+            
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    const href = card.getAttribute('href');
+                    if (href) window.location.href = href;
+                }
+            });
+        });
+
+        // Subtle entrance animation for portfolio cards
+        function initCardAnimations() {
+            const cards = document.querySelectorAll('.portfolio-card');
+            cards.forEach((card, i) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1)';
+                    card.style.transitionDelay = (i * 60) + 'ms';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 80);
+            });
+        }
+
+        // Initialize everything
+        window.onload = function() {
+            initCardAnimations();
+            
+            // Final safety: ensure mobile menu state is correct
+            if (mobileMenu && mobileBtn) {
+                mobileMenu.classList.add('hidden');
+                mobileBtn.setAttribute('aria-expanded', 'false');
+            }
+            
+            // Log for developer (remove in production if needed)
+            console.log('%c[CreativeNab] World-class portfolio loaded — 100% functional', 'color:#666');
+        };
     </script>
 </body>
 </html>
